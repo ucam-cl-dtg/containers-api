@@ -36,6 +36,7 @@ public interface TesterApi {
 	public ContainerData createTester(@CookieParam("crsid") String crsid,
 			@FormParam("testerName") String name,
 			@FormParam("gitURL") String gitURL,
-			@FormParam("parentImageID") String parentID)
+			@FormParam("parentImageID") String parentID,
+			@FormParam("privateKey") String privateKey)
 			throws GitRepositoryCloneException, InvalidNameException;
 }

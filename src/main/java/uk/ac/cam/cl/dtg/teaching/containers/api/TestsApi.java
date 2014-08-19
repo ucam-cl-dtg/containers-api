@@ -37,7 +37,8 @@ public interface TestsApi {
 	public TestInstance startTest(@CookieParam("crsid") String crsid,
 			@FormParam("testContainerID") String testContainerID,
 			@FormParam("testID") String testID,
-			@FormParam("gitURL") String gitURL) throws TestNotFoundExcaption,
+			@FormParam("gitURL") String gitURL,
+			@FormParam("privateKey") String privateKey) throws TestNotFoundExcaption,
 			GitRepositoryCloneException, InvalidNameException;
 
 	@GET
