@@ -13,6 +13,10 @@
 		<slf4j.version>1.7.5</slf4j.version>
 	</properties>
 
+	<scm>
+          <developerConnection>scm:git:ssh://git@github.com/ucam-cl-dtg/containers-api.git</developerConnection>
+        </scm>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.jboss.resteasy</groupId>
@@ -68,4 +72,17 @@
 			</extension>
 		</extensions>
 	</build>
+
+	<distributionManagement>
+          <repository>
+            <id>dtg-code</id>
+            <name>RepositoryProxy</name>
+            <url>http://dtg-maven.cl.cam.ac.uk/content/repositories/releases</url>
+          </repository>
+          <snapshotRepository>
+            <id>dtg-code</id>
+            <name>RepositoryProxy</name>
+            <url>http://dtg-maven.cl.cam.ac.uk/content/repositories/snapshots</url>
+          </snapshotRepository>
+        </distributionManagement>
 </project>
