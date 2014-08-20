@@ -3,9 +3,10 @@ package uk.ac.cam.cl.dtg.teaching.containers.api.model;
 import java.util.List;
 
 public class TestStep {
+	private String name;
 	private List<String> messages;
-	private Object expected;
-	private Object actual;
+	private String expected;
+	private String actual;
 	private String className;
 	private String methodName;
 	private String fileName;
@@ -19,10 +20,11 @@ public class TestStep {
 	
 	public TestStep() {}
 	
-	public TestStep(List<String> messages, Object expected, Object actual,
+	public TestStep(String name, List<String> messages, String expected, String actual,
 			String className, String methodName, String fileName,
 			long startLine, long endLine, String status) {
 		super();
+		this.name = name;
 		this.messages = messages;
 		this.expected = expected;
 		this.actual = actual;
@@ -34,17 +36,23 @@ public class TestStep {
 		this.status = status;
 	}
 	
-	
-	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
 	public void setMessages(List<String> messages) {
 		this.messages = messages;
 	}
 
-	public void setExpected(Object expected) {
+	public void setExpected(String expected) {
 		this.expected = expected;
 	}
 
-	public void setActual(Object actual) {
+	public void setActual(String actual) {
 		this.actual = actual;
 	}
 
@@ -76,11 +84,11 @@ public class TestStep {
 		return messages;
 	}
 
-	public Object getExpected() {
+	public String getExpected() {
 		return expected;
 	}
 
-	public Object getActual() {
+	public String getActual() {
 		return actual;
 	}
 

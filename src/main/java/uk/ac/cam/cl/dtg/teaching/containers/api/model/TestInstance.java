@@ -14,7 +14,7 @@ public class TestInstance {
 	public static final String STATUS_FAILED = TestStep.STATUS_FAIL;
 	public static final String STATUS_WARNING = TestStep.STATUS_WARNING;
 
-	private List<List<TestStep>> results = new LinkedList<>();
+	private List<TestStep> results = new LinkedList<>();
 	private String status = STATUS_UNINITIALIZED;
 	private String testContainerID;
 	private String testID;
@@ -34,11 +34,11 @@ public class TestInstance {
 		this.name = name;
 	}
 
-	public List<List<TestStep>> getResults() {
+	public List<TestStep> getResults() {
 		return results;
 	}
 
-	public void setResults(List<List<TestStep>> results) {
+	public void setResults(List<TestStep> results) {
 		this.results = results;
 	}
 
