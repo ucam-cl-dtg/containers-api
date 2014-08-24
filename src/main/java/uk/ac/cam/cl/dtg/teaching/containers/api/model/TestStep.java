@@ -13,16 +13,17 @@ public class TestStep {
 	private long startLine;
 	private long endLine;
 	private String status;
-
+	private List<Attachment> attachments;
+	
 	public static final String STATUS_PASS = "PASS";
 	public static final String STATUS_FAIL = "FAIL";
 	public static final String STATUS_WARNING = "WARNING";
-	
+	public static final String STATUS_MANUALCHECK= "MANUAL_CHECK";
 	public TestStep() {}
 	
 	public TestStep(String name, List<String> messages, String expected, String actual,
 			String className, String methodName, String fileName,
-			long startLine, long endLine, String status) {
+			long startLine, long endLine, String status, List<Attachment> attachments) {
 		super();
 		this.name = name;
 		this.messages = messages;
@@ -34,6 +35,7 @@ public class TestStep {
 		this.startLine = startLine;
 		this.endLine = endLine;
 		this.status = status;
+		this.attachments = attachments;
 	}
 	
 	public String getName() {
@@ -114,6 +116,14 @@ public class TestStep {
 
 	public String getFileName() {
 		return fileName;
+	}
+
+	public List<Attachment> getAttachments() {
+		return attachments;
+	}
+
+	public void setAttachments(List<Attachment> attachments) {
+		this.attachments = attachments;
 	}
 	
 }
