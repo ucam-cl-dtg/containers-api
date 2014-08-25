@@ -13,7 +13,8 @@ public class TestInstance {
 	public static final String STATUS_PASSED = TestStep.STATUS_PASS;
 	public static final String STATUS_FAILED = TestStep.STATUS_FAIL;
 	public static final String STATUS_WARNING = TestStep.STATUS_WARNING;
-
+	public static final String STATUS_MANUALCHECK = TestStep.STATUS_MANUALCHECK;
+	
 	private List<TestStep> results = new LinkedList<>();
 	private String status = STATUS_UNINITIALIZED;
 	private String testContainerID;
