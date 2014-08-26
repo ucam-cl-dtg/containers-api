@@ -1,6 +1,11 @@
 package uk.ac.cam.cl.dtg.teaching.containers.api.model;
 
 
+/**
+ * This object needs to be immutable since its used concurrently by many threads.  It also needs to be serializable/deserializable through jackson.
+ * @author acr31
+ *
+ */
 public class TestDetails {
 
 	private String id;
@@ -11,7 +16,8 @@ public class TestDetails {
 		return id;
 	}
 
-	public void setId(String id) {
+	@SuppressWarnings("unused")
+	private void setId(String id) {
 		this.id = id;
 	}
 
@@ -19,7 +25,8 @@ public class TestDetails {
 		return name;
 	}
 
-	public void setName(String name) {
+	@SuppressWarnings("unused")
+	private void setName(String name) {
 		this.name = name;
 	}
 
@@ -27,7 +34,8 @@ public class TestDetails {
 		return commands;
 	}
 
-	public void setCommands(String[] commands) {
+	@SuppressWarnings("unused")
+	private void setCommands(String[] commands) {
 		this.commands = commands;
 	}
 }
