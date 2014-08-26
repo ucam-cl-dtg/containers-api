@@ -40,4 +40,8 @@ public interface TesterApi {
 			@FormParam("parentImageID") String parentID,
 			@FormParam("privateKey") String privateKey)
 			throws GitRepositoryCloneException, InvalidNameException;
+
+	@POST
+	@Path("/{containerID}/rescan")
+	public Result rescan(String crsid, String containerID) throws InvalidNameException;
 }

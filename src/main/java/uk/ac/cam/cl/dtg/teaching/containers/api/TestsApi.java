@@ -14,7 +14,7 @@ import javax.ws.rs.Produces;
 import uk.ac.cam.cl.dtg.teaching.containers.api.exceptions.GitRepositoryCloneException;
 import uk.ac.cam.cl.dtg.teaching.containers.api.exceptions.InvalidNameException;
 import uk.ac.cam.cl.dtg.teaching.containers.api.exceptions.TestInstanceNotFoundException;
-import uk.ac.cam.cl.dtg.teaching.containers.api.exceptions.TestNotFoundExcaption;
+import uk.ac.cam.cl.dtg.teaching.containers.api.exceptions.TestNotFoundException;
 import uk.ac.cam.cl.dtg.teaching.containers.api.model.Result;
 import uk.ac.cam.cl.dtg.teaching.containers.api.model.TestInfo;
 import uk.ac.cam.cl.dtg.teaching.containers.api.model.TestInstance;
@@ -25,7 +25,7 @@ public interface TestsApi {
 
 	@GET
 	@Path("/available")
-	public List<TestInfo> listTests() throws TestNotFoundExcaption;
+	public List<TestInfo> listTests() throws TestNotFoundException;
 
 	@GET
 	@Path("/instances")
@@ -38,7 +38,7 @@ public interface TestsApi {
 			@FormParam("testContainerID") String testContainerID,
 			@FormParam("testID") String testID,
 			@FormParam("gitURL") String gitURL,
-			@FormParam("privateKey") String privateKey) throws TestNotFoundExcaption,
+			@FormParam("privateKey") String privateKey) throws TestNotFoundException,
 			GitRepositoryCloneException, InvalidNameException;
 
 	@GET
