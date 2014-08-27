@@ -46,9 +46,9 @@ public interface TestsApi {
 	public Result getSystemLoad();
 
 	@GET
-	@Path("/instances/{testID}")
+	@Path("/instances/{containerID}")
 	public TestInstance getTestStatus(@CookieParam("crsid") String crsid,
-			@PathParam("testID") String containerID)
+			@PathParam("containerID") String containerID)
 			throws TestInstanceNotFoundException, InvalidNameException;
 
 	@DELETE
