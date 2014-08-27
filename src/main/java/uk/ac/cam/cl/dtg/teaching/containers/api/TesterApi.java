@@ -1,5 +1,6 @@
 package uk.ac.cam.cl.dtg.teaching.containers.api;
 
+import java.io.IOException;
 import java.util.List;
 
 import javax.ws.rs.CookieParam;
@@ -13,8 +14,8 @@ import javax.ws.rs.Produces;
 
 import uk.ac.cam.cl.dtg.teaching.containers.api.exceptions.GitRepositoryCloneException;
 import uk.ac.cam.cl.dtg.teaching.containers.api.exceptions.InvalidNameException;
-import uk.ac.cam.cl.dtg.teaching.containers.api.model.Result;
 import uk.ac.cam.cl.dtg.teaching.containers.api.model.ContainerData;
+import uk.ac.cam.cl.dtg.teaching.containers.api.model.Result;
 
 @Path("/testers")
 @Produces("application/json")
@@ -43,5 +44,5 @@ public interface TesterApi {
 
 	@POST
 	@Path("/{containerID}/rescan")
-	public Result rescan(String crsid, String containerID) throws InvalidNameException;
+	public Result rescan(@CookieParam("crsid") String crsid, @PathParam("containerID") String containerID) throws InvalidNameException, IOException;
 }
