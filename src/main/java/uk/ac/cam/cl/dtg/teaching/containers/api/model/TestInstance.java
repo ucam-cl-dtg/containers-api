@@ -25,6 +25,8 @@ public class TestInstance {
 	private String name;
 	private SerializableException exception;
 	
+	public TestInstance() {}
+	
 	public TestInstance(String testContainerID, String testID, String gitURL,
 			String crsid, String containerID, String name) {
 		this.testContainerID = testContainerID;
